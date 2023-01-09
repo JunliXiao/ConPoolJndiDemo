@@ -1,0 +1,38 @@
+body {
+    padding: 4vw;
+}
+
+p {
+	font-size: 1.2vw;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+select {
+    width: 100px;
+}
+
+table {
+	border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+	border: 0.3vw solid purple;
+}
+
+th, td {
+	font-size: 1.2vw;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: center;
+	padding: 1vw;
+	color: black;
+}
+
+td {
+	color: darkgreen
+}
+
+.myhead {
+	font-weight: bold;
+	font-size: 2vw;
+}
