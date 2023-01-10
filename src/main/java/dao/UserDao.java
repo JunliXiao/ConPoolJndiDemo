@@ -56,7 +56,11 @@ public class UserDao implements Dao<User> {
 
 	@Override
 	public boolean add(User obj) {
-		// TODO Auto-generated method stub
+		int rowCount = 0;
+		String sql = "insert into user(" 
+				+ "username, password, email, first_name, last_name, area, job) "
+				+ "values(?, ?, ?, ?, ?, ?, ?);";
+		
 		return false;
 	}
 
