@@ -16,8 +16,8 @@ import dao.BookDao;
 import dao.Dao;
 import model.Book;
 
-@WebServlet("/SignInHandler")
-public class SignInHandler extends HttpServlet {
+@WebServlet("/LogInHandler")
+public class LogInHandler extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	Gson gson = new Gson();

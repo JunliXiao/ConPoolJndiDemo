@@ -1,6 +1,7 @@
 package conpool.jndi;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
@@ -16,14 +17,18 @@ public class RegisterHandler extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Http request received");
-		System.out.println("Request parameter names: ");
+		
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
 		// 取得所有請求參數名稱
 		Enumeration<String> paramterNames = request.getParameterNames();
+		
+		out.println("收到請求參數...");
+		out.println("Request parameter names: ");
 		while (paramterNames.hasMoreElements()) {
 			String name = paramterNames.nextElement().toString();
 			String value = request.getParameter(name);
-			System.out.println(name + ": " + value);
+			out.println(name + ": " + value);
 		}
 	}
 	

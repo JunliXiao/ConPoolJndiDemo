@@ -18,7 +18,7 @@
 <!-- 設定首頁，沒寫預設會搜尋index.html -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
-		<welcome-file>signin.html</welcome-file>
+		<welcome-file>login.html</welcome-file>
 		<welcome-file>index_2.html</welcome-file>
 	</welcome-file-list>
 </web-app>

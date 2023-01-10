@@ -1,59 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head>
-<!-- head definitions go here -->
-<meta charset="UTF-8" />
-<title>Example</title>
-</head>
-<body>
-	<!-- the content goes here -->
-	<h1>Hello World!</h1>
-	<p>Test Test</p>
-	<ul>
-		<li><a href="./BookServlet">BookServlet</a></li>
-		<li><a href="./EventServlet">EventServlet</a></li>
-		<li>Hello world to Command Line</li>
-		<li>Catherine</li>
-	</ul>
-	<h2>HTML表單類標籤</h2>
-	<form action="FormHandler" id="form" method="post">
-		<h3>文字方塊</h3>
-		<label for="name">帳號</label> <input type="text" id="name" name="name"><br>
-		<label for="password">密碼</label> <input type="password" id="password"
-			name="password"><br>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <!-- CSS: Bulma -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <!-- <img
+            src="https://bulma.io/images/bulma-logo.png"
+            width="112"
+            height="28"
+          /> -->
+          LazyTrip.io
+        </a>
 
-		<h3>選項按鈕</h3>
-		性別 <input type="radio" name="gender" value="male">男生 <input
-			type="radio" name="gender" value="female" checked>女生
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-		<h3>核取方塊</h3>
-		旅遊過的地方 <input type="checkbox" name="place" value="japan" checked>日本
-		<input type="checkbox" name="place" value="china">中國 <input
-			type="checkbox" name="place" value="usa">美國 <input
-			type="checkbox" name="place" value="uk">英國
+      <div id="navbarBasicExample" class="navbar-menu">
+        <!-- 導覽列自: 左/上 -->
+        <div class="navbar-start"></div>
 
-		<h3>下拉選單</h3>
-		<label for="job">職業</label> <select id="job" name="job" size=1>
-			<option value="teacher">老師</option>
-			<option value="student" selected>學生</option>
-			<option value="programmer">程式設計師</option>
-			<option value="doctor">醫生</option>
-			<option value="artist">藝術家</option>
-		</select>
+        <!-- 導覽列自: 右/下 -->
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item"> Home </a>
 
-		<h3>文字區塊</h3>
-		<label for="comment">請發表你對本站的建言</label><br>
-		<textarea id="comment" rows=5 cols=30 name="comment"></textarea>
-		<br> <br>
-		<button type="submit" name="submit">提交</button>
-		<button type="reset" name="reset">重置</button>
-	</form>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
 
-	<script type="text/javascript">
-	fetch('http://127.0.0.1:8081/ConPoolJndiDemo/BookServlet').then((r)=>r.json()).then((data)=>{
-		console.log(data)
-	})
-	
-	</script>
-</body>
+          <a class="navbar-item"> Documentation </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item"> Log in </a>
+
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item"> Sign up </a>
+              <hr class="navbar-divider" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
 </html>

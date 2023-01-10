@@ -28,12 +28,19 @@ public class UserServlet extends HttpServlet {
 
 		Dao<User> dao = new UserDao();
 		List<User> users = dao.getAll();
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+//		System.out.println("username: " + username);
+//		System.out.println("password: " + password);
 
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print(_gson.toJson(users));
-		System.out.println("username: " + request.getParameter("username"));
-		System.out.println("password: " + request.getParameter("password"));
+		
+//		out.print(_gson.toJson(users));
+		out.println("收到請求參數...");
+		out.println("username: " + username);
+		out.println("password: " + password);
 
 	}
 
