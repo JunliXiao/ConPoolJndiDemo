@@ -37,10 +37,10 @@ public class UserServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		
-//		out.print(_gson.toJson(users));
-		out.println("收到請求參數...");
-		out.println("username: " + username);
-		out.println("password: " + password);
+		out.print(_gson.toJson(users));
+//		out.println("收到請求參數...");
+//		out.println("username: " + username);
+//		out.println("password: " + password);
 
 	}
 

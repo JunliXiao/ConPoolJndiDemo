@@ -1,6 +1,8 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,10 +21,26 @@ public class UserDao implements Dao<User> {
 	@Override
 	public List<User> getAll() {
 		List<User> users = new ArrayList<>();
-		// String sql = ...
-		try(Connection connection = dataSource.getConnection();) {
+		String sql = "select user_id, username, password, email, first_name, last_name, area, job, created_time from user";
+		try(Connection connection = dataSource.getConnection();
+				PreparedStatement ps = connection.prepareStatement(sql)) {
 			System.out.println("Successfully connected to database!");
-			
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				int userId = rs.getInt(1);
+				String username = rs.getString(2);
+				String password = rs.getString(3);
+				String email = rs.getString(4);
+				String firstName = rs.getString(5);
+				String lastName = rs.getString(6);
+				String area = rs.getString(7);
+				String job = rs.getString(8);
+				String createdAt = rs.getString(9);
+				User user = new User(userId, username, password, email, firstName, lastName, area, job, createdAt);
+				users.add(user);
+				
+			}
+			return users;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

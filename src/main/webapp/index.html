@@ -26,7 +26,7 @@
             width="112"
             height="28"
           /> -->
-          LazyTrip.io
+          <strong>LazyTrip.io</strong>
         </a>
 
         <a
@@ -83,5 +83,35 @@
         </ul>
       </div>
     </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>LazyTrip.io</strong> 由 緯育 Java 雲端服務開發技術養成班
+          TGA105 梯第三組所製作之結訓專題。
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0
+        );
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach((el) => {
+          el.addEventListener("click", () => {
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle("is-active");
+            $target.classList.toggle("is-active");
+          });
+        });
+      });
+    </script>
   </body>
 </html>
