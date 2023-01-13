@@ -55,17 +55,29 @@ public class UserDao implements Dao<User> {
 	}
 
 	@Override
-	public boolean add(User obj) {
+	public boolean add(User user) {
 		int rowCount = 0;
 		String sql = "insert into user(" 
 				+ "username, password, email, first_name, last_name, area, job) "
 				+ "values(?, ?, ?, ?, ?, ?, ?);";
-		
-		return false;
+		try (Connection connection = dataSource.getConnection();
+				PreparedStatement ps = connection.prepareStatement(sql)) {
+			ps.setString(1, user.getUsername());
+			ps.setString(2, user.getPassword());
+			ps.setString(3, user.getEmail());
+			ps.setString(4, user.getFirst_name());
+			ps.setString(5, user.getLast_name());
+			ps.setString(6, user.getArea());
+			ps.setString(7, user.getJob());
+			rowCount = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rowCount != 0;
 	}
 
 	@Override
-	public boolean update(User obj) {
+	public boolean update(User user) {
 		// TODO Auto-generated method stub
 		return false;
 	}
