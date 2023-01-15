@@ -15,10 +15,17 @@
 		<url-pattern>/UserController</url-pattern>
 	</servlet-mapping>
 	
-<!-- 設定首頁，沒寫預設會搜尋index.html -->
+	<!-- 設定首頁，沒寫預設會搜尋index.html -->
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>login.html</welcome-file>
 		<welcome-file>index_2.html</welcome-file>
 	</welcome-file-list>
+	<!-- 設定錯誤處理頁 -->
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+
 </web-app>
