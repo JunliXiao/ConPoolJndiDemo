@@ -30,9 +30,6 @@ public class UserServlet extends HttpServlet {
 		List<User> users = dao.getAll();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		
-//		System.out.println("username: " + username);
-//		System.out.println("password: " + password);
 
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
