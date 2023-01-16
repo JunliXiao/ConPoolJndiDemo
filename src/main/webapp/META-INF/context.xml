@@ -14,7 +14,7 @@
 		maxIdle="10" 
 		maxWaitMillis="500"/>
 		
-		<Resource name="TGA105" 
+	<Resource name="TGA105" 
 		auth="Container"
 		type="javax.sql.DataSource" 
 		driverClassName="com.mysql.cj.jdbc.Driver"
@@ -25,7 +25,7 @@
 		maxIdle="10" 
 		maxWaitMillis="500"/>
 		
-		<Resource name="practice_1" 
+	<Resource name="practice_1" 
 		auth="Container"
 		type="javax.sql.DataSource" 
 		driverClassName="com.mysql.cj.jdbc.Driver"

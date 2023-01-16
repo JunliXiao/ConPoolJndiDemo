@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Dao;
-import dao.UserDao;
+import dao.UserDaoImpl;
 import model.User;
 
 @WebServlet("/register")
@@ -22,7 +22,7 @@ public class RegisterHandler extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		Dao<User> dao = new UserDao();
+		Dao<User> dao = new UserDaoImpl();
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		// 取得所有請求參數名稱

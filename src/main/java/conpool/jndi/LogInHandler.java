@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 
 import dao.BookDao;
 import dao.Dao;
-import dao.UserDao;
+import dao.UserDaoImpl;
 import model.Book;
 import model.User;
 
@@ -27,7 +27,7 @@ public class LogInHandler extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		Dao<User> dao = new UserDao();
+		Dao<User> dao = new UserDaoImpl();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		User user = dao.get(username);

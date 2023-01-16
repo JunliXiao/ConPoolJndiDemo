@@ -14,30 +14,34 @@ import com.google.gson.Gson;
 
 import dao.BookDao;
 import dao.Dao;
-import dao.UserDao;
+import dao.UserDaoImpl;
 import model.Book;
 import model.User;
 
-@WebServlet("/UserServlet")
-public class UserServlet extends HttpServlet {
+@WebServlet("/UserList")
+public class UserList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Gson _gson = new Gson();
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Dao<User> dao = new UserDao();
-		List<User> users = dao.getAll();
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		
-		out.print(_gson.toJson(users));
-//		out.println("收到請求參數...");
-//		out.println("username: " + username);
-//		out.println("password: " + password);
+		Dao<User> dao = new UserDaoImpl();
+		List<User> users = dao.getAll();
+		
+		if (request.getParameter("id") == null) {
+			out.print(_gson.toJson(users));
+		} else {
+			int id = Integer.parseInt(request.getParameter("id"));
+			for (User user : users) {
+				if(user.getUser_id() == id) {
+					out.print(_gson.toJson(user));
+				}
+			}
+		}
 
 	}
 
