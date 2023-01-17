@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
-    <!-- CSS: Bulma -->
-    <link
+    <title>LazyTrip.io</title>
+    <!-- Bulma 原廠 -->
+    <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
+    /> -->
+    <!-- Bulma 自訂 -->
+    <link rel="stylesheet" href="css/myBulma.css" />
+    <!-- 自定義 CSS -->
+    <link rel="stylesheet" href="css/myStyle.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/0548105e54.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- 導覽列 -->
@@ -49,57 +58,102 @@
         <!-- 靠右 -->
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-item"> Home </a>
-
+            <a class="navbar-item">
+              <span class="icon"><i class="fas fa-plus"></i></span>
+            </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item"> About </a>
-              <a class="navbar-item"> Jobs </a>
-              <a class="navbar-item"> Contact </a>
-              <hr class="navbar-divider" />
-              <a class="navbar-item"> Report an issue </a>
+              <a class="navbar-item"> 新的行程 </a>
+              <a class="navbar-item"> 新的揪團 </a>
             </div>
           </div>
 
-          <a class="navbar-item" href="/ConPoolJndiDemo/UserList">
-            User List
-          </a>
+          <a href="#" class="navbar-item"> 揪團 </a>
 
+          <a href="#" class="navbar-item"> 行程 </a>
           <div class="navbar-item">
             <div class="buttons">
               <a class="button is-primary" href="signup.html">
-                <strong>Sign up</strong>
+                <strong> 註冊 </strong>
               </a>
-              <a class="button is-light" href="login.html"> Log in </a>
+              <a class="button is-light" href="login.html"> 登入 </a>
             </div>
           </div>
         </div>
       </div>
     </nav>
-    <section class="section">
-      <div class="content">
-        <a href="index_2.html" target="_blank"
-          >第 2 版：Navbar 顏色填滿，有點醜</a
-        >
-        <p>Notes</p>
-        <ul>
-          <li>Sign up，Log in 可點進網頁、送出資料 (第 2 版內無法)</li>
-          <li>
-            已串接資料庫
-            <ul>
-              <li>註冊 (add user)</li>
-              <li>登入 (get user)</li>
-            </ul>
-          </li>
-          <li>
-            待實作
-            <ul>
-              <li>Session</li>
-              <li>Navbar for user session</li>
-            </ul>
-          </li>
-        </ul>
+
+    <!-- 內容 -->
+
+    <section
+      class="hero is-medium has-background-primary-light has-text-centered"
+    >
+      <div
+        class="hero-body"
+        style="
+          background: radial-gradient(
+              circle,
+              rgba(255, 255, 255, 0.85) 25%,
+              rgba(255, 255, 255, 0.65) 90%
+            ),
+            url('https://tabiiro.travel/img/articles/21032301/sub_2.jpg');
+        "
+      >
+        <p class="title">Happy New Year 兔 You！</p>
+        <div class="columns">
+          <div class="column"></div>
+          <div class="column">
+            <input
+              class="input is-primary"
+              type="text"
+              placeholder="輸入你想去的地方..."
+            />
+          </div>
+          <div class="column"></div>
+        </div>
       </div>
     </section>
+
+    <div class="columns">
+      <div class="column">
+        <section class="section">
+          <div class="content">
+            <article class="message is-primary">
+              <div class="message-header">
+                <p>目前進度</p>
+              </div>
+              <div class="message-body">
+                <a href="index_2.html" target="_blank">第 2 版</a>
+                <ul>
+                  <li>Sign up，Log in 可點進網頁、送出資料 (第 2 版內無法)</li>
+                  <li>
+                    已串接資料庫
+                    <ul>
+                      <li>註冊 (add user)</li>
+                      <li>登入 (get user)</li>
+                      <li>
+                        <a href="/ConPoolJndiDemo/UserList">
+                          User List (get all)
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    待實作
+                    <ul>
+                      <li>Session</li>
+                      <li>Navbar for user session</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+      <div class="column"></div>
+    </div>
+
+    <!-- 頁尾 -->
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
